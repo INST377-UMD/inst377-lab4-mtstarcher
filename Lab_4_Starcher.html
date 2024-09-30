@@ -1,0 +1,91 @@
+
+<!-- Michelle Starcher (Dynamic Website Javascript) Lab 4 -->
+
+<html>
+    <head>
+        <title>Lab 4 - Starcher</title>
+        <link rel="stylesheet" href="Lab_4_Starcher.css">
+    </head>
+
+    <body>
+        <h1 id="headingTitle">INST377 Lab 4</h1>
+
+        <div class="layout">
+            <form id="nameForm" onsubmit="return(nameValidation())">
+                <div id="nameBox" class="Section">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <!-- <br> -->
+                    <button type="submit">Alert Me!</button>
+                </div>
+            </form>
+
+            <div id="changeColour" class="Section">
+                <button onclick="changeColor()">Change Color</button>
+                <br>
+            </div>    
+
+            <form id="textTester" onsubmit="return(textValidation())">
+                <div id="textTest" class="Section">
+                    <label for="testText">Text Tester:</label>
+                    <input type="text" id="testText">
+                    <!-- <br> -->
+                    <button type="submit">Validate Text</button>
+                </div>
+            </form>
+
+            <div id="addText" class="Section">
+                <button onclick="addTextButton()">Add Text</button>
+                <br>
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript">
+
+            // Name form section
+            function nameValidation() {
+                var inputValue = document.getElementById('name').value;
+                alert('Hi ' + inputValue + '!');
+                return false;
+            }
+
+            // Change color section
+            function changeColor() {
+                if(document.body.style.backgroundColor === "darkolivegreen") {
+                    document.body.style.backgroundColor = "darkseagreen";
+                } 
+                else{
+                    document.body.style.backgroundColor = "darkolivegreen";
+                }
+                // Unsure as to whether this needs to be saved to stay whatever it was saved to
+                // on each refresh of the webpage, or if it just needs to not be on a timer/other condition
+                // the instructions don't make this very clear, and I followed the demo as best as possible
+            }
+
+            // Text tester section
+            function textValidation() {
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                if (validationRegex.test(document.getElementById('testText').value)) {
+                    alert('How about.... no');
+                    return false;
+                }
+                return true;
+            }
+
+            // Add text section
+            function addTextButton() {
+                var heading = document.getElementById('headingTitle');
+
+                if (!heading.textContent.includes('- Add Text')) {
+                    heading.textContent += ' - Add Text'; 
+                    // fixed to limit additional heading text to only add once as seen in demo video
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

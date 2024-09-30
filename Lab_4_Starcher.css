@@ -1,0 +1,35 @@
+
+/* Michelle Starcher (Dynamic Website Javascript) Lab 4 CSS file */
+
+body {
+    background-color: darkseagreen;
+}
+
+.layout {
+    width: 100%;
+    /* float: left; */
+}
+
+
+.Section {
+    background-color: beige;
+    /* float: left; */
+    padding: 25px;
+    border: 2px solid brown;
+    border-radius: 15px;
+
+    width: 30%;
+    float: left;
+    margin: 1%;
+}
+
+/* #textTest {
+    float: left;
+} */
+
+/* #addText {
+    float: inline-start;
+} */
+
+
+
